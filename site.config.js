@@ -2,24 +2,16 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "suggwon",
-    image: "/avatar.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
-    role: "frontend developer",
-    bio: "I develop everything using node.",
+    image: "/avatar.png", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+
     email: "mail@suggwon.com",
-    linkedin: "",
     github: "suggwon",
     instagram: "suggwon",
   },
-  projects: [
-    {
-      name: `morethan-log-suggwon`,
-      href: "https://github.com/suggwon/morethan-log",
-    },
-  ],
   // blog setting (required)
   blog: {
-    title: "morethan-log",
-    description: "welcome to morethan-log!",
+    title: "김석원의 블로그",
+    description: "김석원의 블로그입니다.",
     scheme: "dark", // 'light' | 'dark' | 'system'
   },
 
