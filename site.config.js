@@ -7,7 +7,7 @@ const CONFIG = {
     bio: "",
     email: "mail@suggwon.com",
     linkedin: "",
-    github: "suggwon",
+    github: "",
     instagram: "suggwon",
   },
   // blog setting (required)
