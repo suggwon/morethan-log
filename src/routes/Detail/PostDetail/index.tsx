@@ -1,11 +1,13 @@
 import React from "react"
 import PostHeader from "./PostHeader"
 import Footer from "./PostFooter"
-import CommentBox from "./CommentBox"
+//import CommentBox from "./CommentBox"
 import Category from "src/components/Category"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
 import usePostQuery from "src/hooks/usePostQuery"
+import Comments from "src/components/Comments"
+import { CONFIG } from "site.config"
 
 type Props = {}
 
@@ -32,8 +34,16 @@ const PostDetail: React.FC<Props> = () => {
         </div>
         {data.type[0] === "Post" && (
           <>
+            {/* ✅ 댓글: 본문 바로 아래, 카드 안쪽 */}
+            <div style={{ marginTop: "2rem" }}>
+              <Comments
+                postId={data.id}
+                title={data.title ?? ""}
+                url={`${CONFIG.link}/${data.slug}`}
+              />
+            </div>
+            {/* ✅ Back/Top 버튼: 댓글 바로 아래 */}
             <Footer />
-            <CommentBox data={data} />
           </>
         )}
       </article>
@@ -44,12 +54,16 @@ const PostDetail: React.FC<Props> = () => {
 export default PostDetail
 
 const StyledWrapper = styled.div`
+  #cusdis_thread {
+  overflow: visible;
+  }
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
   border-radius: 1.5rem;
   max-width: 56rem;
+  overflow: visible;
   background-color: ${({ theme }) =>
     theme.scheme === "light" ? "white" : theme.colors.gray4};
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
